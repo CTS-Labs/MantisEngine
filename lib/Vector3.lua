@@ -9,6 +9,10 @@ function Vector3.new(x, y, z)
     return self
 end
 
+function Vector3.ZERO() 
+    return Vector3.new(0, 0, 0)
+end
+
 function Vector3.__add(a, b)
     if getmetatable(b) == Vector3 then
         return Vector3.new(a.x + b.x, a.y + b.y, a.z + b.z)
@@ -63,10 +67,6 @@ end
 
 function Vector3:__tostring()
     return "(" .. self.x .. ", " .. self.y .. ", " .. self.z .. ")"
-end
-
-function Vector3.ZERO() 
-    return Vector3.new(0, 0, 0)
 end
 
 return Vector3
