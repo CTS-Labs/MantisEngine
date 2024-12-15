@@ -1,6 +1,6 @@
-# Lua Random Module Documentation
+# Random Module Documentation
 
-This document provides a comprehensive overview of the `random` module in Lua, which includes various functions for generating random values and manipulating tables.
+This document provides a comprehensive overview of the `random` module, which includes various functions for generating random values and manipulating tables.
 
 ## Overview
 
