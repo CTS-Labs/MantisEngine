@@ -12,8 +12,12 @@ function Vector2:add(other)
     return Vector2.new(self.x + other.x, self.y + other.y)
 end
 
-function Vector2:subtract(other)
-    return Vector2.new(self.x - other.x, self.y - other.y)
+function Vector2.__sub(a, b)
+    if getmetatable(b) == Vector2 then
+        return Vector2.new(a.x - b.x, a.y - b.y)
+    elseif getmetatable(b) == Vector3 then
+        return Vector3.new(a.x - b.x, a.y - b.y, b.z)  -- Compatible with Vector3
+    end
 end
 
 function Vector2:scale(scalar)
