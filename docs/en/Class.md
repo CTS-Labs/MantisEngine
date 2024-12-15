@@ -70,5 +70,3 @@ end
 local myDog = Dog:new()
 print(myDog:speak())  -- Output: Woof! I am a dog.
 ```
-
-Feel free to modify or expand upon this documentation as needed!
