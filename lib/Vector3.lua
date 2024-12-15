@@ -1,4 +1,3 @@
--- Vector3.lua
 local Vector3 = {}
 Vector3.__index = Vector3
 
