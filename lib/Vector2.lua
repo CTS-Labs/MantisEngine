@@ -8,20 +8,34 @@ function Vector2.new(x, y)
     return self
 end
 
-function Vector2:add(other)
-    return Vector2.new(self.x + other.x, self.y + other.y)
+function Vector2.__add(a, b)
+    if getmetatable(b) == Vector2 then
+        return Vector2.new(a.x + b.x, a.y + b.y)
+    elseif getmetatable(b) == Vector3 then
+        return Vector3.new(a.x + b.x, a.y + b.y, b.z)
+    end
 end
 
 function Vector2.__sub(a, b)
     if getmetatable(b) == Vector2 then
         return Vector2.new(a.x - b.x, a.y - b.y)
     elseif getmetatable(b) == Vector3 then
-        return Vector3.new(a.x - b.x, a.y - b.y, b.z)  -- Compatible with Vector3
+        return Vector3.new(a.x - b.x, a.y - b.y, b.z)
     end
 end
 
-function Vector2:scale(scalar)
-    return Vector2.new(self.x * scalar, self.y * scalar)
+function Vector2.__mul(a, b)
+    if type(b) == "number" then
+        return Vector2.new(a.x * b, a.y * b)
+    elseif getmetatable(b) == Vector2 then
+        return a.x * b.x + a.y * b.y 
+    end
+end
+
+function Vector2.__div(a, b)
+    if type(b) == "number" then
+        return Vector2.new(a.x / b, a.y / b)
+    end
 end
 
 function Vector2:length()
