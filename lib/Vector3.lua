@@ -65,4 +65,8 @@ function Vector3:__tostring()
     return "(" .. self.x .. ", " .. self.y .. ", " .. self.z .. ")"
 end
 
+function Vector3.ZERO() 
+    return Vector3.new(0, 0, 0)
+end
+
 return Vector3
