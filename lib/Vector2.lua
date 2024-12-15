@@ -8,6 +8,10 @@ function Vector2.new(x, y)
     return self
 end
 
+function Vector2.ZERO() 
+    return Vector2.new(0, 0, 0)
+end
+
 function Vector2.__add(a, b)
     if getmetatable(b) == Vector2 then
         return Vector2.new(a.x + b.x, a.y + b.y)
