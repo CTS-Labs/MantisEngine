@@ -1,8 +1,8 @@
-# Lua Vector2 Documentation
+# Vector2
 
 ## Overview
 
-The `Vector2` module provides a simple implementation of 2D vectors in Lua. It supports basic vector operations such as addition, subtraction, multiplication, division, normalization, and dot product.
+The `Vector2` module provides a simple implementation of 2D vectors. It supports basic vector operations such as addition, subtraction, multiplication, division, normalization, and dot product.
 
 ## Vector2 Table
 
