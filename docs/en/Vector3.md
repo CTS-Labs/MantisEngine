@@ -1,8 +1,8 @@
-# Lua Vector3 Documentation
+# Vector3
 
 ## Overview
 
-The `Vector3` module provides an implementation of 3D vectors in Lua. It supports various vector operations such as addition, subtraction, multiplication, division, normalization, dot product, and cross product.
+The `Vector3` module provides an implementation of 3D vectors. It supports various vector operations such as addition, subtraction, multiplication, division, normalization, dot product, and cross product.
 
 ## Vector3 Table
 
