@@ -1,3 +1,78 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "@MaterialDescriptor": {
+            "type": "object",
+            "properties": {
+                "transparency": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": { "type": "boolean" },
+                        "blendMode": {
+                            "type": "string",
+                            "enum": ["MIX", "ADD", "SUB", "MUL", "PERMUL"]
+                        },
+                        "cullMode": {
+                            "type": "string",
+                            "enum": ["BACK", "FRONT", "DISABLED"]
+                        }
+                    },
+                    "required": ["enabled", "blendMode", "cullMode"]
+                },
+                "albedo": {
+                    "type": "object",
+                    "properties": {
+                        "color": { "type": "string", "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$" },
+                        "texture": { "type": ["string", "null"] }
+                    },
+                    "required": ["color"]
+                },
+                "metallic": {
+                    "type": "object",
+                    "properties": {
+                        "metallic": { "type": "number", "minimum": 0, "maximum": 1 },
+                        "specular": { "type": "number", "minimum": 0, "maximum": 1 },
+                        "texture": { "type": ["string", "null"] }
+                    },
+                    "required": ["metallic", "specular"]
+                },
+                "roughness": {
+                    "type": "object",
+                    "properties": {
+                        "roughness": { "type": "number", "minimum": 0, "maximum": 1 },
+                        "texture": { "type": ["string", "null"] }
+                    },
+                    "required": ["roughness"]
+                },
+                "emission": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": { "type": "boolean" },
+                        "color": { "type": "string", "pattern": "^#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$" },
+                        "energyMultiplier": { "type": "number", "minimum": 0, "maximum": 16 }
+                    },
+                    "required": ["enabled", "color", "energyMultiplier"]
+                },
+                "normalMap": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": { "type": "boolean" },
+                        "scale": { "type": "number", "minimum": -16, "maximum": 16 },
+                        "texture": { "type": ["string", "null"] }
+                    },
+                    "required": ["enabled", "scale"]
+                }
+            },
+            "required": [
+                "transparency",
+                "albedo",
+                "metallic",
+                "roughness",
+                "emission",
+                "normalMap"
+            ]
+        }
+    },
+    "required": ["@MaterialDescriptor"]
 }
