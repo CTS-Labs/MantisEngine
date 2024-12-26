@@ -1,0 +1,33 @@
+{
+    "$schema" : "https://raw.githubusercontent.com/CTS-Labs/MantisEngine/refs/heads/main/sdk/meaterial.schema.json",
+    "@MaterialDescriptor": {
+        "transparency" : {
+            "enabled" : false,
+            "blendMode" : "MIX",
+            "cullMode" : "BACK"
+        }, 
+        "albedo" : {
+            "color" : "#FFFFFF",
+            "texture" : null
+        },
+        "metallic" : {
+            "metallic" : 0,
+            "specular" : 0.5,
+            "texture" : null
+        },
+        "roughness" : {
+            "roughness" : 1,
+            "texture" : null
+        },
+        "emission" : {
+            "enabled" : false,
+            "color" : "#FFFFFF",
+            "energyMultiplier" : 1
+        },
+        "normalMap" : {
+            "enabled" : false,
+            "scale" : 1,
+            "texture" : null
+        }
+    }
+}
